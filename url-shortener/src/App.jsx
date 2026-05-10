@@ -1,6 +1,5 @@
-
 import './App.css'
-import { createBrowserRouter } from 'react-router-dom'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import AppLayout from './layouts/app-layout'
 import Landing from './pages/landing'
 import Auth from './pages/auth'
@@ -12,35 +11,37 @@ import RedirectLink from './pages/redirect-link'
 
 const router = createBrowserRouter([
   {
-   element : <AppLayout/>,
-   children [
-    {
-     path : '/',
-     element : <Landing/>
-    }
-    {
-      path : '/auth',
-      element : <Auth/>
-    },
-    {
-      path : '/dashboard',
-      element : <Dashboard/>
-    },
-    {
-      path : '/link/:id',
-      element : <Link/>
-    },
-    {
-      path : '/:id',
-      element : <RedirectLink/> 
-    }
-   ]
+    element: <AppLayout />,
+    children: [
+      {
+        path: '/',
+        element: <Landing />
+      },
+      {
+        path: '/auth',
+        element: <Auth />
+      },
+      {
+        path: '/dashboard',
+        element: <Dashboard />
+      },
+      {
+        path: '/link/:id',
+        element: <Link />
+      },
+      {
+        path: '/:id',
+        element: <RedirectLink />
+      }
+    ]
 
   }
 ])
 
 function App() {
-  return ()
+  return (
+    <RouterProvider router={router} />
+  )
 }
 
 export default App
