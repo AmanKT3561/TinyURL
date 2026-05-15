@@ -41,7 +41,7 @@ const Login = () => {
     useEffect(() => {
         if (error == null && data != null) {
 
-            navigate(`/dashboard?${longLink ? `createNew=${longLink}` : ""}`);
+            navigate(`/?${longLink ? `createNew=${longLink}` : ""}`);
             fetchUser();
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps

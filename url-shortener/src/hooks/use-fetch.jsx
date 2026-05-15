@@ -1,4 +1,4 @@
-import {useState} from "react";
+import { useState } from "react";
 
 const useFetch = (cb, options = {}) => {
   const [data, setData] = useState(null);
@@ -9,7 +9,7 @@ const useFetch = (cb, options = {}) => {
     setLoading(true);
     setError(null);
     try {
-      const response = await cb(options, ...args);
+      const response = await cb(...args);  // ✅ remove options
       setData(response);
       setError(null);
     } catch (error) {
@@ -19,7 +19,7 @@ const useFetch = (cb, options = {}) => {
     }
   };
 
-  return {data, loading, error, fn};
+  return { data, loading, error, fn };
 };
 
 export default useFetch;
