@@ -31,7 +31,7 @@ const Login = () => {
     })
     const navigate = useNavigate();
     let [searchParams] = useSearchParams();
-    const longLink = searchParams.get("creatNew");
+    const longLink = searchParams.get("createNew");
 
 
     const { loading, error, fn: fnLogin, data } = useFetch(login, formData);
@@ -68,8 +68,8 @@ const Login = () => {
                     .required("Password is required"),
             });
 
-            await schema.validate(formData, { abortEarly: false });
-            await fnLogin();
+           await schema.validate(formData, { abortEarly: false });
+await fnLogin(formData); // ← add formData here
 
         } catch (e) {
             const newErrors = {};

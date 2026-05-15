@@ -62,7 +62,7 @@ const Signup = () => {
       });
 
       await schema.validate(formData, { abortEarly: false });
-      await fnSignup();
+      await fnSignup(formData); // ← add formData here
     } catch (error) {
       const newErrors = {};
       if (error?.inner) {
