@@ -24,7 +24,7 @@ export async function deleteUrl(id) {
   return data;
 }
 
-// 
+//
 
 export async function createUrl(
   { title, longUrl, customUrl, user_id },
@@ -66,9 +66,8 @@ export async function createUrl(
   return data;
 }
 
-
 export async function getLongUrl(id) {
-  let {data: shortLinkData, error: shortLinkError} = await supabase
+  let { data: shortLinkData, error: shortLinkError } = await supabase
     .from("urls")
     .select("id, original_url")
     .or(`short_url.eq.${id},custom_url.eq.${id}`)
@@ -82,9 +81,9 @@ export async function getLongUrl(id) {
   return shortLinkData;
 }
 
-
-export async function getUrl({id, user_id}) {
-  const {data, error} = await supabase
+export async function getUrl({ id, user_id }) {
+  // ✅ destructure object
+  const { data, error } = await supabase
     .from("urls")
     .select("*")
     .eq("id", id)
@@ -92,9 +91,8 @@ export async function getUrl({id, user_id}) {
     .single();
 
   if (error) {
-    console.error(error);
-    throw new Error("Short Url not found");
+    console.error(error.message);
+    throw new Error("unable to load url");
   }
-
   return data;
 }
