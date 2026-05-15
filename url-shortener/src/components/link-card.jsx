@@ -44,7 +44,7 @@ const LinkCard = ({ url = [], fetchUrls, userId }) => {
         </span>
 
         <span className="text-blue-400 text-lg font-semibold hover:underline break-all">
-          https://trimrr.in/
+          https://tiny-url-nine-rose.vercel.app/
           {url?.custom_url ? url?.custom_url : url?.short_url}
         </span>
 
@@ -61,7 +61,7 @@ const LinkCard = ({ url = [], fetchUrls, userId }) => {
         <Button
           variant="ghost"
           onClick={() =>
-            navigator.clipboard.writeText(`https://trimrr.in/${url?.short_url}`)
+            navigator.clipboard.writeText(`https://tiny-url-nine-rose.vercel.app/${url?.short_url}`)
           }
         >
           <Copy />

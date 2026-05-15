@@ -34,7 +34,7 @@ const LinkPage = () => {
   if (error) navigate("/dashboard");
 
   const link = url?.custom_url ?? url?.short_url ?? "";
-  const shortUrl = `https://trimrr.in/${link}`;
+  const shortUrl = `https://tiny-url-nine-rose.vercel.app/${link}`;
 
   return (
     <div className="pb-16">

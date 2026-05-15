@@ -122,7 +122,7 @@ export function CreateLink() {
                         <div className="flex items-center bg-white/5 border border-white/10 rounded-full h-11 overflow-hidden">
                             <div className="flex items-center gap-1.5 px-4 border-r border-white/10 h-full shrink-0">
                                 <LinkIcon className="w-3.5 h-3.5 text-white/40" />
-                                <span className="text-[13px] font-medium text-white/60">trimrr.in</span>
+                                <span className="text-[13px] font-medium text-white/60">tiny-url-nine-rose.vercel.app</span>
                             </div>
                             <span className="text-[13px] text-white/25 px-2 shrink-0">/</span>
                             <Input
